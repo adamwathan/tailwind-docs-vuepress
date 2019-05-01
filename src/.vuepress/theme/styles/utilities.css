@@ -1,0 +1,78 @@
+.transition {
+  transition: all .1s ease-in;
+}
+
+@variants responsive, hover {
+  .translate-r-2px {
+    transform: translateX(2px);
+  }
+  .transition-fast {
+    transition: all .2s ease;
+  }
+}
+
+.scrollbar-none {
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-w-2::-webkit-scrollbar {
+  @apply w-2 h-2;
+}
+
+.scrollbar-track-gray-lighter::-webkit-scrollbar-track {
+  @apply bg-gray-300;
+}
+
+.scrollbar-thumb-gray::-webkit-scrollbar-thumb {
+  @apply bg-gray-400;
+}
+
+.scrollbar-thumb-rounded::-webkit-scrollbar-thumb {
+  @apply rounded;
+}
+
+@supports (position: sticky) {
+  @media (min-width: theme('screens.lg')) {
+    .sticky\?lg\:h-screen {
+      height: 100vh;
+    }
+    .sticky\?lg\:h-\(screen-16\) {
+      height: ~"calc(100vh - 4rem)";
+    }
+  }
+}
+
+.focus\:bg-gray-600:focus {
+  @apply bg-gray-700;
+}
+
+.focus\:text-white:focus {
+  @apply text-white;
+}
+
+.group:hover .group-hover\:text-white {
+  @apply text-white;
+}
+
+.focus-within\:border-teal-500:focus-within {
+  @apply border-teal-500;
+}
+
+.active\:bg-blue-700:active {
+  @apply bg-blue-700;
+}
+
+.placeholder-gray-700::placeholder {
+  @apply text-gray-700;
+}
+
+.placeholder-gray-800::placeholder {
+  @apply text-gray-800;
+}
+
+.placeholder-gray-900::placeholder {
+  @apply text-gray-900;
+}

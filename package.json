@@ -1,0 +1,19 @@
+{
+  "devDependencies": {
+    "autoprefixer": "^9.5.1",
+    "postcss-import": "^12.0.1",
+    "tailwindcss": "^1.0.0-beta.8",
+    "vuepress": "^1.0.0-alpha.47"
+  },
+  "scripts": {
+    "serve": "vuepress dev src",
+    "dev": "vuepress dev src",
+    "build": "vuepress build src"
+  },
+  "dependencies": {
+    "anchor-js": "^4.2.0",
+    "gsap": "^2.1.2",
+    "lodash": "^4.17.11",
+    "postcss-nested": "^4.1.2"
+  }
+}
