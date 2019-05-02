@@ -1,4 +1,5 @@
 ---
+layout: Homepage
 title: "Controlling File Size"
 description: "Strategies for keeping your generated CSS small and performant."
 titleBorder: true

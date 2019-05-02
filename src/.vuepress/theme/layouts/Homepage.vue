@@ -144,7 +144,7 @@
                   <!-- Table of contents -->
                   <div class="hidden xl:text-sm xl:block xl:w-1/4 xl:px-6">
                     <div class="flex flex-col justify-between overflow-y-auto sticky top-0 max-h-screen pt-12 pb-4 -mt-12">
-                      <!-- <TableOfContents class="mb-8"/> -->
+                      <TableOfContents class="mb-8"/>
                       <div id="ad"></div>
                     </div>
                   </div>

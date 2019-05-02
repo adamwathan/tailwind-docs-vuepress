@@ -357,7 +357,7 @@
       },
       animateContactColors() {
         return tweenTo(this.$refs.contactCursor1.$el, .25, { visibility: 'visible'})
-          .then(() => tweenTo(this.$refs.contactCursor2.$elZ, .25, { visibility: 'visible'}))
+          .then(() => tweenTo(this.$refs.contactCursor2.$el, .25, { visibility: 'visible'}))
           .then(() => {
             return Promise.all([
               tweenStaggerTo(this.$refs.classContactColor1.children, 0.08, { display: 'inline-block' }, 0.08),
@@ -373,7 +373,7 @@
           .then(() => {
             return Promise.all([
               tweenTo(this.$refs.contactCursor1.$el, .08, { visibility: 'hidden'}),
-              tweenTo(this.$refs.contactCursor2.$elZ, .08, { visibility: 'hidden'}),
+              tweenTo(this.$refs.contactCursor2.$el, .08, { visibility: 'hidden'}),
             ])
           })
       },
@@ -395,11 +395,11 @@
           .then(() => tweenTo(this.$refs.contentCursor.$el, .25, { visibility: 'hidden' }))
       },
       animateCardWidening() {
-        return tweenTo(this.$refs.resizeCursor.$el, 1, { opacity: 1, x: 0, y: 0, ease: Power4.easeOut })
+        return tweenTo(this.$refs.resizeCursor, 1, { opacity: 1, x: 0, y: 0, ease: Power4.easeOut })
           .then(() => tweenTo(this.$refs.resizeCursorCircle, 0, { opacity: 1 }))
           .then(() => tweenTo(this.$refs.card, 2, { width: '30rem', ease: Power4.easeOut }, '+=.25'))
           .then(() => tweenTo(this.$refs.resizeCursorCircle, 0, { opacity: .5 }))
-          .then(() => tweenTo(this.$refs.resizeCursor.$el, 1, { opacity: 0, x: 100, y: 150, ease: Power4.easeInOut }, '+=.25'))
+          .then(() => tweenTo(this.$refs.resizeCursor, 1, { opacity: 0, x: 100, y: 150, ease: Power4.easeInOut }, '+=.25'))
       },
       animateCardFlexLayout() {
         return tweenTo(this.$refs.cardFlexCursor.$el, .25, { visibility: 'visible'})
@@ -500,7 +500,7 @@
         TweenLite.set(this.$refs.cardInner, { display: 'none' })
         TweenLite.set(this.$refs.cardLarge, { display: 'flex' })
 
-        return tweenTo(this.$refs.resizeCursor.$el, 1, { opacity: 1, x: 0, y: 0, ease: Power4.easeOut })
+        return tweenTo(this.$refs.resizeCursor, 1, { opacity: 1, x: 0, y: 0, ease: Power4.easeOut })
           .then(() => tweenTo(this.$refs.resizeCursorCircle, 0, { opacity: 1 }))
       },
       animateCardResizing() {

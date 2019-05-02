@@ -1,14 +1,7 @@
 <template>
-  <div>
+  <div v-if="this.$page.headers">
     <h5 class="text-gray-500 uppercase tracking-wide font-bold text-sm lg:text-xs">On this page</h5>
     <HeaderList class="mt-4" :items="groupedHeaders" :list-type="listTypes" />
-    <!-- <ul class="mt-4 overflow-x-hidden" v-if="links.length > 0"> -->
-      <!-- <li class="mb-2" :class="link.isChild ? 'ml-2' : ''" v-for="link in links"> -->
-        <!-- <a :href="link.href" class="block transition-fast hover:translate-r-2px hover:text-gray-900 text-gray-600 font-medium">{{ link.text }}</a> -->
-      <!-- </li> -->
-    <!-- </ul> -->
-    <!-- <slot name="header" /> -->
-    <!-- <slot name="footer" /> -->
   </div>
 </template>
 
@@ -31,7 +24,7 @@ export default {
       return typeof this.listType === 'string' ? [this.listType] : this.listType
     },
     groupedHeaders () {
-      return this.groupHeaders(this.$page.headers).list
+      return this.groupHeaders(this.$page.headers || []).list
     }
   },
   methods: {
