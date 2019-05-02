@@ -31,7 +31,6 @@ export default {
       return typeof this.listType === 'string' ? [this.listType] : this.listType
     },
     groupedHeaders () {
-      console.log(this.$page.headers)
       return this.groupHeaders(this.$page.headers).list
     }
   },

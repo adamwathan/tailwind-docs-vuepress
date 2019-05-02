@@ -27,8 +27,6 @@
 
 
 <script>
-import { isActive } from '../util'
-
 export default {
   props: [],
   methods: {

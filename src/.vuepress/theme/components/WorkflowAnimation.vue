@@ -8,10 +8,10 @@
        --><div class="inline-block code-yellow">class</div><!--
        --><div class="inline-block code-blue">=&quot;</div><!--
        --><animation-code-text ref="classCardFlex" class="inline-block code-green" text="md:flex "></animation-code-text><!--
-       --><div ref="cardFlexCursor" class="invisible inline-block border-r-2 border-yellow h-6 absolute" style="margin-top: -0.125rem"></div><!--
+       --><AnimationCursor ref="cardFlexCursor" /><!--
        --><div class="inline-block code-green">bg-white rounded-lg</div><!--
        --><animation-code-text ref="classCardPadding" class="inline-block code-green" text=" p-6"></animation-code-text><!--
-       --><div ref="cardCursor" class="inline-block border-r-2 border-yellow h-6 absolute" style="margin-top: -0.125rem"></div><!--
+       --><AnimationCursor ref="cardCursor" :visible="true" /><!--
        --><div class="inline-block code-blue">&quot;&gt;</div><!--
      --></div>
         <div class="whitespace-no-wrap"><!--
@@ -21,12 +21,12 @@
        --><div class="inline-block code-blue">=&quot;</div><!--
        --><div class="inline-block code-green">h-16 w-16</div><!--
        --><animation-code-text ref="classAvatarLarger" class="inline-block code-green" text=" md:h-24 md:w-24"></animation-code-text><!--
-       --><div ref="avatarLargerCursor" class="invisible inline-block border-r-2 border-yellow h-6 absolute" style="margin-top: -0.125rem"></div><!--
+       --><AnimationCursor ref="avatarLargerCursor" /><!--
        --><animation-code-text ref="classAvatarRounded" class="inline-block code-green" text=" rounded-full"></animation-code-text><!--
        --><animation-code-text ref="classAvatarCenter" class="inline-block code-green" text=" mx-auto"></animation-code-text><!--
        --><animation-code-text ref="classAvatarMarginFix" class="inline-block code-green" text=" md:mx-0"></animation-code-text><!--
        --><animation-code-text ref="classAvatarRightMargin" class="inline-block code-green" text=" md:mr-6"></animation-code-text><!--
-       --><div ref="avatarCursor" class="invisible inline-block border-r-2 border-yellow h-6 absolute" style="margin-top: -0.125rem"></div><!--
+       --><AnimationCursor ref="avatarCursor" /><!--
        --><div class="inline-block code-blue">&quot;&nbsp;</div><!--
        --><div class="inline-block code-purple">src</div><!--
        --><div class="inline-block code-blue">=&quot;</div><!--
@@ -72,11 +72,11 @@
              --><div class="hidden code-green">f</div><!--
              --><div class="hidden code-green">t</div><!--
            --></div><!--
-           --><div ref="contentLeftAlignCursor" class="invisible inline-block border-r-2 border-yellow h-6 absolute" style="margin-top: -0.125rem"></div><!--
+           --><AnimationCursor ref="contentLeftAlignCursor" /><!--
          --></div><!--
          --><div class="hidden code-blue">&quot;</div><!--
        --></div><!--
-       --><div ref="contentCursor" class="invisible inline-block border-r-2 border-yellow h-6 absolute" style="margin-top: -0.125rem"></div><!--
+       --><AnimationCursor ref="contentCursor" /><!--
        --><div class="inline-block code-blue">&gt;</div><!--
      --></div><!--
      --><div><!--
@@ -88,7 +88,7 @@
             'text-lg',
             { class: 'code-blue', text: '&quot;' },
           ]"></animation-code-text><!--
-       --><div ref="nameCursor" class="invisible inline-block border-r-2 border-yellow h-6 absolute" style="margin-top: -0.125rem"></div><!--
+       --><AnimationCursor ref="nameCursor" /><!--
        --><div class="inline-block code-blue">&gt;</div><!--
        --><div class="inline-block code-white">Erin Lindford</div><!--
        --><div class="inline-block code-blue">&lt;/</div><!--
@@ -124,7 +124,7 @@
          --><div class="hidden code-green">0</div><!--
          --><div class="hidden code-blue">&quot;</div><!--
        --></div><!--
-       --><div ref="roleCursor" class="invisible inline-block border-r-2 border-yellow h-6 absolute" style="margin-top: -0.125rem"></div><!--
+       --><AnimationCursor ref="roleCursor" /><!--
        --><div class="inline-block code-blue">&gt;</div><!--
        --><div class="inline-block code-white">Customer Support</div><!--
        --><div class="inline-block code-blue">&lt;/</div><!--
@@ -158,7 +158,7 @@
          --><div class="hidden code-green">0</div><!--
          --><div class="hidden code-blue">&quot;</div><!--
        --></div><!--
-       --><div ref="contactCursor1" class="invisible inline-block border-r-2 border-yellow h-6 absolute" style="margin-top: -0.125rem"></div><!--
+       --><AnimationCursor ref="contactCursor1" /><!--
        --><div class="inline-block code-blue">&gt;</div><!--
        --><div class="inline-block code-white">erinlindford@example.com</div><!--
        --><div class="inline-block code-blue">&lt;/</div><!--
@@ -192,7 +192,7 @@
          --><div class="hidden code-green">0</div><!--
          --><div class="hidden code-blue">&quot;</div><!--
        --></div><!--
-       --><div ref="contactCursor2" class="invisible inline-block border-r-2 border-yellow h-6 absolute" style="margin-top: -0.125rem"></div><!--
+       --><AnimationCursor ref="contactCursor2" /><!--
        --><div class="inline-block code-blue">&gt;</div><!--
        --><div class="inline-block code-white">(555) 765-4321</div><!--
        --><div class="inline-block code-blue">&lt;/</div><!--
@@ -278,6 +278,7 @@
   import { TimelineLite, TweenLite, Power4 } from 'gsap/TweenMax'
   import _ from 'lodash'
   import AnimationCodeText from './AnimationCodeText'
+  import AnimationCursor from './AnimationCursor'
 
   function tweenTo(el, duration, vars, position) {
     return new Promise((resolve, reject) => {
@@ -299,7 +300,8 @@
   export default {
     name: 'WorkflowAnimation',
     components: {
-      AnimationCodeText
+      AnimationCodeText,
+      AnimationCursor,
     },
     methods: {
       runAnimation() {
@@ -320,13 +322,13 @@
           .then(() => this.animateCardResizing())
       },
       animateCardPadding() {
-        return tweenTo(this.$refs.cardCursor, .08, { visibility: 'visible' })
+        return tweenTo(this.$refs.cardCursor.$el, .08, { visibility: 'visible' })
           .then(() => tweenStaggerTo(this.$refs.classCardPadding.$el.children, 0.08, { display: 'inline-block' }, 0.08))
           .then(() => tweenTo(this.$refs.cardInner, 1, { padding: '1.5rem', ease: Power4.easeOut }, '+=.25'))
-          .then(() => tweenTo(this.$refs.cardCursor, .08, { visibility: 'hidden' }))
+          .then(() => tweenTo(this.$refs.cardCursor.$el, .08, { visibility: 'hidden' }))
       },
       animateAvatarRadius() {
-        return tweenTo(this.$refs.avatarCursor, .08, { visibility: 'visible' })
+        return tweenTo(this.$refs.avatarCursor.$el, .08, { visibility: 'visible' })
           .then(() => tweenStaggerTo(this.$refs.classAvatarRounded.$el.children, 0.08, { display: 'inline-block' }, 0.08))
           .then(() => tweenTo(this.$refs.avatar, 1, { borderRadius: '2rem', ease: Power4.easeOut }, '+=.25'))
       },
@@ -339,23 +341,23 @@
             TweenLite.set(this.$refs.avatar, { x: oldPosition.left - this.$refs.avatar.getBoundingClientRect().left })
             return tweenTo(this.$refs.avatar, 1, { x: 0, ease: Power4.easeOut }, '+=.25')
           })
-          .then(tweenTo(this.$refs.avatarCursor, .08, { visibility: 'hidden'}))
+          .then(() => tweenTo(this.$refs.avatarCursor.$el, .08, { visibility: 'hidden'}))
       },
       animateNameSize() {
-        return tweenTo(this.$refs.nameCursor, .08, { visibility: 'visible'})
+        return tweenTo(this.$refs.nameCursor.$el, .08, { visibility: 'visible'})
           .then(() => tweenStaggerTo(this.$refs.classNameSize.$el.children, 0.08, { display: 'inline-block' }, 0.08))
           .then(() => tweenTo(this.$refs.name, 1, { fontSize: '1.25rem', ease: Power4.easeOut }, '+=.25'))
-          .then(() => tweenTo(this.$refs.nameCursor, .08, { visibility: 'hidden'}))
+          .then(() => tweenTo(this.$refs.nameCursor.$el, .08, { visibility: 'hidden'}))
       },
       animateRoleColor() {
-        return tweenTo(this.$refs.roleCursor, .08, { visibility: 'visible'})
+        return tweenTo(this.$refs.roleCursor.$el, .08, { visibility: 'visible'})
           .then(() => tweenStaggerTo(this.$refs.classRoleColor.children, 0.08, { display: 'inline-block' }, 0.08))
           .then(() => tweenTo(this.$refs.role, 1, { color: '#9f7aea', ease: Power4.easeOut }, '+=.25'))
-          .then(() => tweenTo(this.$refs.roleCursor, .08, { visibility: 'hidden'}))
+          .then(() => tweenTo(this.$refs.roleCursor.$el, .08, { visibility: 'hidden'}))
       },
       animateContactColors() {
-        return tweenTo(this.$refs.contactCursor1, .25, { visibility: 'visible'})
-          .then(() => tweenTo(this.$refs.contactCursor2, .25, { visibility: 'visible'}))
+        return tweenTo(this.$refs.contactCursor1.$el, .25, { visibility: 'visible'})
+          .then(() => tweenTo(this.$refs.contactCursor2.$elZ, .25, { visibility: 'visible'}))
           .then(() => {
             return Promise.all([
               tweenStaggerTo(this.$refs.classContactColor1.children, 0.08, { display: 'inline-block' }, 0.08),
@@ -370,13 +372,13 @@
           })
           .then(() => {
             return Promise.all([
-              tweenTo(this.$refs.contactCursor1, .08, { visibility: 'hidden'}),
-              tweenTo(this.$refs.contactCursor2, .08, { visibility: 'hidden'}),
+              tweenTo(this.$refs.contactCursor1.$el, .08, { visibility: 'hidden'}),
+              tweenTo(this.$refs.contactCursor2.$elZ, .08, { visibility: 'hidden'}),
             ])
           })
       },
       animateContentCentering() {
-        return tweenTo(this.$refs.contentCursor, .08, { visibility: 'visible'})
+        return tweenTo(this.$refs.contentCursor.$el, .08, { visibility: 'visible'})
           .then(() => tweenStaggerTo(this.$refs.classContentCenter.children, 0.08, { display: 'inline-block' }, 0.08))
           .then(() => {
             const elements = _.flatMap([...this.$refs.content.children], el => [...el.children])
@@ -390,17 +392,17 @@
 
             return tweenTo(elements, 1, { x: 0, ease: Power4.easeOut })
           })
-          .then(() => tweenTo(this.$refs.contentCursor, .25, { visibility: 'hidden' }))
+          .then(() => tweenTo(this.$refs.contentCursor.$el, .25, { visibility: 'hidden' }))
       },
       animateCardWidening() {
-        return tweenTo(this.$refs.resizeCursor, 1, { opacity: 1, x: 0, y: 0, ease: Power4.easeOut })
+        return tweenTo(this.$refs.resizeCursor.$el, 1, { opacity: 1, x: 0, y: 0, ease: Power4.easeOut })
           .then(() => tweenTo(this.$refs.resizeCursorCircle, 0, { opacity: 1 }))
           .then(() => tweenTo(this.$refs.card, 2, { width: '30rem', ease: Power4.easeOut }, '+=.25'))
           .then(() => tweenTo(this.$refs.resizeCursorCircle, 0, { opacity: .5 }))
-          .then(() => tweenTo(this.$refs.resizeCursor, 1, { opacity: 0, x: 100, y: 150, ease: Power4.easeInOut }, '+=.25'))
+          .then(() => tweenTo(this.$refs.resizeCursor.$el, 1, { opacity: 0, x: 100, y: 150, ease: Power4.easeInOut }, '+=.25'))
       },
       animateCardFlexLayout() {
-        return tweenTo(this.$refs.cardFlexCursor, .25, { visibility: 'visible'})
+        return tweenTo(this.$refs.cardFlexCursor.$el, .25, { visibility: 'visible'})
           .then(() => tweenStaggerTo(this.$refs.classCardFlex.$el.children, 0.08, { display: 'inline-block' }, 0.08))
           .then(() => {
             const contentElements = _.flatMap([...this.$refs.content.children], el => [...el.children])
@@ -429,10 +431,10 @@
               tweenTo(this.$refs.cardInner, 1, { height: newCardPosition.height, ease: Power4.easeOut }, '+=.25'),
             ])
           })
-          .then(() => tweenTo(this.$refs.cardFlexCursor, .25, { visibility: 'hidden' }))
+          .then(() => tweenTo(this.$refs.cardFlexCursor.$el, .25, { visibility: 'hidden' }))
       },
       animateAvatarMarginFix() {
-        return tweenTo(this.$refs.avatarCursor, .25, { visibility: 'visible'})
+        return tweenTo(this.$refs.avatarCursor.$el, .25, { visibility: 'visible'})
           .then(() => tweenStaggerTo(this.$refs.classAvatarMarginFix.$el.children, 0.08, { display: 'inline-block' }, 0.08))
           .then(() => {
             const oldAvatarPosition = this.$refs.avatar.getBoundingClientRect()
@@ -451,10 +453,10 @@
               tweenTo(this.$refs.content, 1, { x: 0, ease: Power4.easeOut }, '+=.25'),
             ])
           })
-          .then(() => tweenTo(this.$refs.avatarCursor, .25, { visibility: 'hidden' }))
+          .then(() => tweenTo(this.$refs.avatarCursor.$el, .25, { visibility: 'hidden' }))
       },
       animateContentLeftAlign() {
-        return tweenTo(this.$refs.contentLeftAlignCursor, .25, { visibility: 'visible'})
+        return tweenTo(this.$refs.contentLeftAlignCursor.$el, .25, { visibility: 'visible'})
           .then(() => tweenStaggerTo(this.$refs.classContentLeftAlign.children, 0.08, { display: 'inline-block' }, 0.08))
           .then(() => {
             const elements = _.flatMap([...this.$refs.content.children], el => [...el.children])
@@ -468,10 +470,10 @@
 
             return tweenTo(elements, 1, { x: 0, ease: Power4.easeOut })
           })
-          .then(() => tweenTo(this.$refs.contentLeftAlignCursor, .25, { visibility: 'hidden' }))
+          .then(() => tweenTo(this.$refs.contentLeftAlignCursor.$el, .25, { visibility: 'hidden' }))
       },
       animateAvatarRightMargin() {
-        return tweenTo(this.$refs.avatarCursor, .25, { visibility: 'visible'})
+        return tweenTo(this.$refs.avatarCursor.$el, .25, { visibility: 'visible'})
           .then(() => tweenStaggerTo(this.$refs.classAvatarRightMargin.$el.children, 0.08, { display: 'inline-block' }, 0.08))
           .then(() => {
             const oldContentPosition = this.$refs.content.getBoundingClientRect()
@@ -484,21 +486,21 @@
 
             return tweenTo(this.$refs.content, 1, { x: 0, ease: Power4.easeOut }, '+=.25')
           })
-          .then(() => tweenTo(this.$refs.avatarCursor, .25, { visibility: 'hidden' }))
+          .then(() => tweenTo(this.$refs.avatarCursor.$el, .25, { visibility: 'hidden' }))
       },
       animateAvatarLarger() {
         TweenLite.set(this.$refs.avatar, { borderRadius: '100%' })
 
-        return tweenTo(this.$refs.avatarLargerCursor, .08, { visibility: 'visible'})
+        return tweenTo(this.$refs.avatarLargerCursor.$el, .08, { visibility: 'visible'})
           .then(() => tweenStaggerTo(this.$refs.classAvatarLarger.$el.children, 0.08, { display: 'inline-block' }, 0.08))
           .then(() => tweenTo(this.$refs.avatar, 1, { height: '6rem', width: '6rem', ease: Power4.easeOut }, '+=.25'))
-          .then(() => tweenTo(this.$refs.avatarLargerCursor, .08, { visibility: 'hidden'}))
+          .then(() => tweenTo(this.$refs.avatarLargerCursor.$el, .08, { visibility: 'hidden'}))
       },
       animateResizeCursorIntoPosition() {
         TweenLite.set(this.$refs.cardInner, { display: 'none' })
         TweenLite.set(this.$refs.cardLarge, { display: 'flex' })
 
-        return tweenTo(this.$refs.resizeCursor, 1, { opacity: 1, x: 0, y: 0, ease: Power4.easeOut })
+        return tweenTo(this.$refs.resizeCursor.$el, 1, { opacity: 1, x: 0, y: 0, ease: Power4.easeOut })
           .then(() => tweenTo(this.$refs.resizeCursorCircle, 0, { opacity: 1 }))
       },
       animateCardResizing() {
