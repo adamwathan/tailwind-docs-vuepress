@@ -81,16 +81,6 @@
     font-weight: 400;
   }
 
-  > pre, pre& {
-    @apply font-mono;
-    @apply rounded-lg;
-    font-weight: 400;
-    scrollbar-width: none;
-    &::-webkit-scrollbar {
-      display: none;
-    }
-  }
-
   > blockquote, blockquote& {
     @apply italic;
     @apply text-gray-900;
@@ -195,11 +185,22 @@
     @apply leading-normal;
   }
 
-  > pre, pre&, > ul li pre, > ol li pre {
-    @apply p-4;
+  > pre, pre&, > ul li pre, > ol li pre,
+  > div[class*=language-], div[class*=language-]&, > ul li div[class*=language-], > ol li div[class*=language-] {
+    @apply font-mono;
+    @apply rounded-lg;
     @apply bg-gray-800;
     @apply text-sm;
     @apply leading-normal;
+    font-weight: 400;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  > pre, pre&, > ul li pre, > ol li pre {
+    @apply p-4;
   }
 
   > table {

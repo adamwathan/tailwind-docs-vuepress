@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="">
     <div class="bg-gray-100">
       <!-- Top nav -->
       <div class="flex items-center">
@@ -103,29 +103,7 @@
         <!-- Side nav -->
         <div id="sidebar" class="hidden absolute z-90 top-16 bg-white w-full border-b -mb-16 lg:-mb-0 lg:static lg:bg-transparent lg:border-b-0 lg:pt-0 lg:w-1/4 lg:block lg:border-0 xl:w-1/5">
           <div class="lg:block lg:relative lg:sticky lg:top-0 overflow-hidden">
-            <nav id="nav" class="px-6 pt-6 overflow-y-auto text-base lg:text-sm lg:py-12 lg:pl-6 lg:pr-8 sticky?lg:h-screen">
-              <!-- @foreach ($page->navigation as $sectionName => $sectionItems) -->
-              <div class="mb-8">
-                <h5 class="mb-3 lg:mb-2 text-gray-500 uppercase tracking-wide font-bold text-sm lg:text-xs">(Section name)</h5>
-                <ul>
-                  <!-- @foreach ($sectionItems as $name => $slugOrChildren) -->
-                  <li class="mb-3 lg:mb-1">
-                    <a class="px-2 -mx-2 py-1 transition-fast relative block ? text-teal-600 font-medium" href="#">
-                      <span class="rounded absolute inset-0 bg-teal-200 opacity-25"></span>
-                      <span class="relative">(Nav item name)</span>
-                    </a>
-                  </li>
-                  <li class="mb-3 lg:mb-1">
-                    <a class="px-2 -mx-2 py-1 transition-fast relative block hover:translate-r-2px hover:text-gray-900 text-gray-600 font-medium" href="#">
-                      <span class="rounded absolute inset-0 bg-teal-200 opacity-0"></span>
-                      <span class="relative">(Nav item name)</span>
-                    </a>
-                  </li>
-                  <!-- @endforeach -->
-                </ul>
-              </div>
-              <!-- @endforeach -->
-            </nav>
+            <SidebarNavigation class="sticky?lg:h-screen" />
           </div>
         </div>
         <!-- /Side nav -->
@@ -198,11 +176,13 @@
 <script>
   import WorkflowAnimation from '../components/WorkflowAnimation'
   import TableOfContents from '../components/TableOfContents'
+  import SidebarNavigation from '../components/SidebarNavigation'
 
   export default {
     components: {
       WorkflowAnimation,
       TableOfContents,
+      SidebarNavigation,
     }
   }
 </script>
