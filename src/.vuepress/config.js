@@ -5,7 +5,7 @@ module.exports = {
         title: 'Getting Started',
         children: [
           ['/docs/installation/', 'Installation'],
-          ['/docs/upgrading-to-v1/', 'Upgrade Guide'],
+          ['/docs/upgrade-guide/', 'Upgrade Guide'],
           ['/docs/using-with-sass-less-stylus/', 'Using with Sass/Less/Stylus'],
           ['/docs/controlling-file-size/', 'Controlling File Size'],
           ['/docs/browser-support/', 'Browser Support'],

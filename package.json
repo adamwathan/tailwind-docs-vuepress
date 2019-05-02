@@ -13,7 +13,9 @@
   "dependencies": {
     "anchor-js": "^4.2.0",
     "gsap": "^2.1.2",
+    "js-beautify": "^1.10.0",
     "lodash": "^4.17.11",
-    "postcss-nested": "^4.1.2"
+    "postcss-nested": "^4.1.2",
+    "prismjs": "^1.16.0"
   }
 }

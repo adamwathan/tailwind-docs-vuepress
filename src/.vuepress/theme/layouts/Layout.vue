@@ -81,12 +81,14 @@
 
               <!-- Main content area -->
               <div id="content" class="pt-24 pb-16 lg:pt-28 w-full">
-                <div class="markdown mb-6 px-6 max-w-3xl mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12 xl:w-3/4">
+                <div class="mb-6 px-6 max-w-3xl mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12 xl:w-3/4">
 
-                  <h1 v-if="$page.title">{{ $page.title }}</h1>
+                  <div class="markdown">
+                    <h1 v-if="$page.title">{{ $page.title }}</h1>
 
-                  <div v-if="$page.frontmatter.description" class="mt-0 mb-4 text-gray-600">
-                    {{ $page.frontmatter.description }}
+                    <div v-if="$page.frontmatter.description" class="mt-0 mb-4 text-gray-600">
+                      {{ $page.frontmatter.description }}
+                    </div>
                   </div>
 
                   <hr v-if="$page.frontmatter.titleBorder" class="my-8 border-b-2 border-gray-200">
