@@ -23,7 +23,7 @@ module.exports = {
           ['/docs/adding-new-utilities/', 'Adding New Utilities'],
           ['/docs/extracting-components/', 'Extracting Components'],
           ['/docs/adding-base-styles/', 'Adding Base Styles'],
-          ['/docs/functions-and-directives/', 'Functions &amp; Directives'],
+          ['/docs/functions-and-directives/', 'Functions & Directives'],
         ],
       },
       {
@@ -205,5 +205,8 @@ module.exports = {
         return origRender(src, env)
       }
     }
-  }
+  },
+  plugins: [
+    '@vuepress/plugin-nprogress',
+  ]
 }

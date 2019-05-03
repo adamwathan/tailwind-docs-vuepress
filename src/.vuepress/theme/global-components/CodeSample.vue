@@ -1,6 +1,6 @@
 <template>
   <div class="relative overflow-hidden mb-8">
-    <div class="bg-white rounded-t-lg overflow-hidden border-t border-l border-r border-gray-400 p-4">
+    <div class="bg-white rounded-t-lg overflow-hidden border-t border-l border-r border-gray-400 p-4" :class="exampleClass">
       <slot></slot>
     </div>
     <div class="scollbar-none rounded-b-lg p-4 bg-gray-800">
@@ -17,6 +17,9 @@ export default {
   props: {
     lang: {
       default: 'html',
+    },
+    exampleClass: {
+      default: ''
     },
   },
   computed: {

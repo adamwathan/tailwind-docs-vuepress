@@ -4,7 +4,7 @@ description: "Using utilities to style elements on hover, focus, and more."
 titleBorder: true
 ---
 
-@include('_partials.work-in-progress')
+<WorkInProgress />
 
 To Document:
 
@@ -19,18 +19,18 @@ Similar to our [responsive prefixes](/docs/responsive-design), Tailwind makes it
 
 Add the `hover:` prefix to only apply a utility on hover.
 
-@component('_partials.code-sample', ['lang' => 'html', 'class' => 'text-center'])
-<button type="button" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded focus:outline-none focus:shadow-outline">
-  Hover me
-</button>
-
-
-@slot('code')
-<button class="bg-transparent hover:bg-blue-500 text-blue-700 hover:text-white...">
-  Hover me
-</button>
-@endslot
-@endcomponent
+<code-sample example-class="text-center">
+  <button type="button" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded focus:outline-none focus:shadow-outline">
+    Hover me
+  </button>
+  <template #code>
+    :::escape
+    <button class="bg-transparent hover:bg-blue-500 text-blue-700 hover:text-white...">
+      Hover me
+    </button>
+    :::
+  </template>
+</code-sample>
 
 You can enable `hover` variants for a core utility plugin in the `variants` section of your `tailwind.config.js` file:
 
@@ -48,15 +48,16 @@ module.exports = {
 
 Add the `focus:` prefix to only apply a utility on focus.
 
-@component('_partials.code-sample', ['lang' => 'html'])
-<div class="max-w-xs w-full mx-auto">
-  <input class="bg-gray-200 focus:bg-white border-transparent focus:border-blue-400 text-gray-900 appearance-none inline-block w-full text-gray-900 border rounded py-3 px-4 focus:outline-none" placeholder="Focus me">
-</div>
-
-@slot('code')
-<input class="bg-gray-200 focus:bg-white border-transparent focus:border-blue-400 ..." placeholder="Focus me">
-@endslot
-@endcomponent
+<code-sample>
+  <div class="max-w-xs w-full mx-auto">
+    <input class="bg-gray-200 focus:bg-white border-transparent focus:border-blue-400 text-gray-900 appearance-none inline-block w-full text-gray-900 border rounded py-3 px-4 focus:outline-none" placeholder="Focus me">
+  </div>
+  <template #code>
+    :::escape
+    <input class="bg-gray-200 focus:bg-white border-transparent focus:border-blue-400 ..." placeholder="Focus me">
+    :::
+  </template>
+</code-sample>
 
 You can enable `focus` variants for a core utility plugin in the `variants` section of your `tailwind.config.js` file:
 
@@ -75,17 +76,18 @@ module.exports = {
 
 Add the `active:` prefix to only apply a utility when an element is active.
 
-@component('_partials.code-sample', ['lang' => 'html', 'class' => 'text-center'])
-<button type="button" class="bg-blue-500 active:bg-blue-700 text-white font-semibold hover:text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-  Click me
-</button>
-
-@slot('code')
-<button class="bg-blue-500 active:bg-blue-700 text-white...">
-  Click me
-</button>
-@endslot
-@endcomponent
+<code-sample example-class="text-center">
+  <button type="button" class="bg-blue-500 active:bg-blue-700 text-white font-semibold hover:text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+    Click me
+  </button>
+  <template #code>
+    :::escape
+    <button class="bg-blue-500 active:bg-blue-700 text-white...">
+      Click me
+    </button>
+    :::
+  </template>
+</code-sample>
 
 You can enable `active` variants for a core utility plugin in the `variants` section of your `tailwind.config.js` file:
 
@@ -104,20 +106,20 @@ module.exports = {
 
 If you need to style a child element when hovering over a specific parent element, add the `.group` class to the parent element and add the `group-hover:` prefix to the utility on the child element.
 
-@component('_partials.code-sample', ['lang' => 'html', 'class' => 'bg-gray-200 p-8'])
-<div class="group hover:bg-blue-500 p-4 cursor-pointer bg-white rounded max-w-xs w-full shadow-lg select-none overflow-hidden mx-auto">
-  <p class="font-semibold text-lg mb-1 text-gray-900 group-hover:text-white">New Project</p>
-  <p class="text-gray-700 group-hover:text-white mb-2">Create a new project from a variety of starting templates.</p>
-</div>
-
-
-@slot('code')
-<div class="group bg-white hover:bg-blue-500 ...">
-  <p class="text-gray-900 group-hover:text-white ...">New Project</p>
-  <p class="text-gray-700 group-hover:text-white ...">Create a new project from a variety of starting templates.</p>
-</div>
-@endslot
-@endcomponent
+<code-sample example-class="bg-gray-200 p-8">
+  <div class="group hover:bg-blue-500 p-4 cursor-pointer bg-white rounded max-w-xs w-full shadow-lg select-none overflow-hidden mx-auto">
+    <p class="font-semibold text-lg mb-1 text-gray-900 group-hover:text-white">New Project</p>
+    <p class="text-gray-700 group-hover:text-white mb-2">Create a new project from a variety of starting templates.</p>
+  </div>
+  <template #code>
+    :::escape
+    <div class="group bg-white hover:bg-blue-500 ...">
+      <p class="text-gray-900 group-hover:text-white ...">New Project</p>
+      <p class="text-gray-700 group-hover:text-white ...">Create a new project from a variety of starting templates.</p>
+    </div>
+    :::
+  </template>
+</code-sample>
 
 You can enable `group-hover` variants for a core utility plugin in the `variants` section of your `tailwind.config.js` file:
 
@@ -147,26 +149,26 @@ module.exports = {
 
 Add the `focus-within:` prefix to only apply a utility when a child element has focus.
 
-@component('_partials.code-sample', ['lang' => 'html', 'class' => 'bg-white p-8'])
-<form class="w-full max-w-sm mx-auto">
-  <div class="flex items-center border-b-2 border-gray-400 focus-within:border-teal-500 py-2">
-    <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Jane Doe" aria-label="Full name">
-    <button class="focus:shadow-outline focus:outline-none flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded" type="button">
-      Sign Up
-    </button>
-  </div>
-</form>
-
-
-@slot('code')
-<form class="border-b-2 border-gray-400 focus-within:border-teal-500 ...">
-  <input class="..." placeholder="Jane Doe" ...>
-  <button class="...">
-    Sign Up
-  </button>
-</form>
-@endslot
-@endcomponent
+<code-sample example-class="bg-white p-8">
+  <form class="w-full max-w-sm mx-auto">
+    <div class="flex items-center border-b-2 border-gray-400 focus-within:border-teal-500 py-2">
+      <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Jane Doe" aria-label="Full name">
+      <button class="focus:shadow-outline focus:outline-none flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded" type="button">
+        Sign Up
+      </button>
+    </div>
+  </form>
+  <template #code>
+    :::escape
+    <form class="border-b-2 border-gray-400 focus-within:border-teal-500 ...">
+      <input class="..." placeholder="Jane Doe" ...>
+      <button class="...">
+        Sign Up
+      </button>
+    </form>
+    :::
+  </template>
+</code-sample>
 
 You can enable `focus-within` variants for a core utility plugin in the `variants` section of your `tailwind.config.js` file:
 
@@ -192,11 +194,11 @@ To apply a state variant responsively, add the responsive prefix first, before t
 
 ## Custom Utilities
 
-You can generate state variants for your own custom utilities using the `@@variants` directive:
+You can generate state variants for your own custom utilities using the `@variants` directive:
 
 ```css
 /* Input: */
-@@variants group-hover, hover, focus {
+@variants group-hover, hover, focus {
   .banana {
     color: yellow;
   }
@@ -218,4 +220,4 @@ You can generate state variants for your own custom utilities using the `@@varia
 
 ```
 
-For more information, see the [@@variants directive documentation](/docs/functions-and-directives#variants).
+For more information, see the [@variants directive documentation](/docs/functions-and-directives#variants).

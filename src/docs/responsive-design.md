@@ -4,7 +4,7 @@ description: "Using responsive utility variants to build adaptive user interface
 titleBorder: true
 ---
 
-@include('_partials.work-in-progress')
+<WorkInProgress />
 
 To Document:
 
@@ -20,35 +20,36 @@ This is done using predefined screen sizes (media query breakpoints), each of wh
 
 ## Responsive example
 
-@component('_partials.responsive-code-sample')
-@slot('none')
-<div class="flex justify-center">
-  <div class="bg-purple-500 text-white w-24 h-24 rounded-full text-xs font-semibold flex items-center justify-center">Tailwind</div>
-</div>
-@endslot
-@slot('sm')
-<div class="flex justify-center">
-  <div class="bg-green-500 text-white w-24 h-24 rounded-full text-xs font-semibold flex items-center justify-center">Tailwind</div>
-</div>
-@endslot
-@slot('md')
-<div class="flex justify-center">
-  <div class="bg-blue-500 text-yellow-500 w-24 h-24 rounded-full text-xs font-semibold flex items-center justify-center">Tailwind</div>
-</div>
-@endslot
-@slot('lg')
-<div class="flex justify-center">
-  <div class="bg-red-500 text-yellow-500 w-24 h-24 rounded-full text-xs font-semibold flex items-center justify-center">Tailwind</div>
-</div>
-@endslot
-@slot('xl')
-<div class="flex justify-center">
-  <div class="bg-orange-500 text-yellow-500 w-24 h-24 rounded-full text-xs font-semibold flex items-center justify-center">Tailwind</div>
-</div>
-@endslot
-@slot('code')
-<div class="none:bg-purple-500 none:text-white sm:bg-green-500 md:bg-blue-500 md:text-yellow-500 lg:bg-red-500 xl:bg-orange-500 ...">
-  ...
-</div>
-@endslot
-@endcomponent
+<responsive-code-sample>
+  <div></div>
+  <template #none>
+    <div class="flex justify-center">
+      <div class="bg-purple-500 text-white w-24 h-24 rounded-full text-xs font-semibold flex items-center justify-center">Tailwind</div>
+    </div>
+  </template>
+  <template #sm>
+    <div class="flex justify-center">
+      <div class="bg-green-500 text-white w-24 h-24 rounded-full text-xs font-semibold flex items-center justify-center">Tailwind</div>
+    </div>
+  </template>
+  <template #md>
+    <div class="flex justify-center">
+      <div class="bg-blue-500 text-yellow-500 w-24 h-24 rounded-full text-xs font-semibold flex items-center justify-center">Tailwind</div>
+    </div>
+  </template>
+  <template #lg>
+    <div class="flex justify-center">
+      <div class="bg-red-500 text-yellow-500 w-24 h-24 rounded-full text-xs font-semibold flex items-center justify-center">Tailwind</div>
+    </div>
+  </template>
+  <template #xl>
+    <div class="flex justify-center">
+      <div class="bg-orange-500 text-yellow-500 w-24 h-24 rounded-full text-xs font-semibold flex items-center justify-center">Tailwind</div>
+    </div>
+  </template>
+  <template #code>
+    <div class="none:bg-purple-500 none:text-white sm:bg-green-500 md:bg-blue-500 md:text-yellow-500 lg:bg-red-500 xl:bg-orange-500 ...">
+      ...
+    </div>
+  </template>
+</responsive-code-sample>
