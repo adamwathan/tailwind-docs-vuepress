@@ -34,7 +34,7 @@ Tailwind doesn't include purpose-built form control classes out of the box, but 
     </div>
   </form>
   <p class="text-center text-gray-500 text-xs">
-    &copy;{{ date('Y') }} Acme Corp. All rights reserved.
+    &copy;{{ currentYear }} Acme Corp. All rights reserved.
   </p>
 </div>
 @endcomponent
@@ -173,3 +173,14 @@ Tailwind doesn't include purpose-built form control classes out of the box, but 
   </div>
 </div>
 @endcomponent
+
+
+<script>
+export default {
+  computed: {
+    currentYear() {
+      return new Date().getFullYear()
+    }
+  }
+}
+</script>
