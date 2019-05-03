@@ -12,6 +12,8 @@
   },
   "dependencies": {
     "anchor-js": "^4.2.0",
+    "dedent": "^0.7.0",
+    "escape-html": "^1.0.3",
     "gsap": "^2.1.2",
     "js-beautify": "^1.10.0",
     "lodash": "^4.17.11",

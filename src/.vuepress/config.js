@@ -1,3 +1,5 @@
+const { escapeHtml } = require('@vuepress/shared-utils')
+
 module.exports = {
   themeConfig: {
     sidebar: [
@@ -194,5 +196,14 @@ module.exports = {
       require('postcss-nested'),
       require('autoprefixer')
     ]
+  },
+  markdown: {
+    extendMarkdown: md => {
+      const origRender = md.render.bind(md)
+      md.render = (src, env) => {
+        src = src.replace(/:::escape((.|\n)*?):::/gm, (m, p1) => escapeHtml(p1).trim())
+        return origRender(src, env)
+      }
+    }
   }
 }

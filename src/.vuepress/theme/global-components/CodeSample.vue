@@ -4,36 +4,28 @@
       <slot></slot>
     </div>
     <div class="scollbar-none rounded-b-lg p-4 bg-gray-800">
-      <pre class="scrollbar-none" :class="`language-${lang}`" style="margin: 0; padding: 0;"><code>{{ extractedCode }}</code></pre>
-    </div>
-    <div class="hidden" ref="code">
-      <slot name="code"></slot>
+      <pre ref="code" class="scrollbar-none" :class="`language-${lang}`" style="margin: 0; padding: 0;"><code>{{ code }}</code></pre>
     </div>
   </div>
 </template>
 
 <script>
-import beautify from 'js-beautify'
-
-// This autohighlights which seems *dark*
-import prism from 'prismjs'
+import dedent from 'dedent'
+import highlight from '../util/highlight'
 
 export default {
   props: {
     lang: {
       default: 'html',
     },
-    code: {
-      default: null,
-    },
   },
-  data() {
-    return {
-      extractedCode: null
+  computed: {
+    code() {
+      return dedent`${this.$slots.code[0].text}`
     }
   },
   mounted() {
-    this.extractedCode = beautify.html(this.$refs.code.children[0].outerHTML, { indent_size: 2 })
+    highlight(this.$refs.code)
   }
 }
 </script>
