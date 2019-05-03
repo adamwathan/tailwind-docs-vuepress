@@ -55,7 +55,7 @@ Use `.font-mono` to apply a web safe monospaced font family:
 
 To control the font family of an element at a specific breakpoint, add a `{screen}:` prefix to any existing font family utility class. For example, use `md:font-serif` to apply the `font-serif` utility at only medium screen sizes and above.
 
-For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design) documentation.
+For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design/) documentation.
 
 @component('_partials.responsive-code-sample')
 @slot('none')

@@ -85,7 +85,7 @@ Use `.bg-repeat-y` to repeat the background image only vertically.
 
 To control the repetition of an element's background image at a specific breakpoint, add a `{screen}:` prefix to any existing background repeat utility. For example, adding the class `md:bg-repeat-x` to an element would apply the `bg-repeat-x` utility at medium screen sizes and above.
 
-For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design) documentation.
+For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design/) documentation.
 
 @component('_partials.responsive-code-sample')
 @slot('none')

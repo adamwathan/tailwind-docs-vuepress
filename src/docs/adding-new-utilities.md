@@ -13,11 +13,11 @@ Deciding on the best way to extend a framework can be paralyzing, so here are so
 A bare-bones Tailwind setup is a single CSS file that looks like this:
 
 ```css
-@@tailwind base;
+@tailwind base;
 
-@@tailwind components;
+@tailwind components;
 
-@@tailwind utilities;
+@tailwind utilities;
 ```
 
 In CSS, **the order of your rule definitions is extremely important**.
@@ -47,9 +47,9 @@ For example, given the following CSS:
 For this reason, **we recommend defining any custom utility classes at the end of your stylesheet,** *after* you inject Tailwind's utility classes:
 
 ```css
-@@tailwind base;
-@@tailwind components;
-@@tailwind utilities;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 .bg-cover-image {
   background-image: url('/path/to/image.jpg');
@@ -62,16 +62,16 @@ If you're using `postcss-import` or a preprocessor like Less, Sass, or Stylus, c
 
 ```css
 /* Using postcss-import */
-@@import "tailwindcss/base";
-@@import "tailwindcss/components";
-@@import "tailwindcss/utilities";
-@@import "custom-utilities";
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "custom-utilities";
 
 /* Using Sass or Less */
-@@tailwind base;
-@@tailwind components;
-@@tailwind utilities;
-@@import "custom-utilities";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "custom-utilities";
 ```
 
 ## Responsive Variants
@@ -79,11 +79,11 @@ If you're using `postcss-import` or a preprocessor like Less, Sass, or Stylus, c
 If you'd like to create responsive versions of your own utilities based on the breakpoints defined in your `tailwind.config.js` file, wrap your utilities in the `@responsive { ... }` directive:
 
 ```css
-@@tailwind base;
-@@tailwind components;
-@@tailwind utilities;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@@responsive {
+@responsive {
   .bg-cover-image {
     background-image: url('/path/to/image.jpg');
   }

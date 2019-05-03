@@ -39,7 +39,7 @@ For example, `.p-6` would add `1.5rem` of padding on all sides of an element, `.
 
 To control the padding of an element at a specific breakpoint, add a `{screen}:` prefix to any existing padding utility. For example, adding the class `md:py-8` to an element would apply the `py-8` utility at medium screen sizes and above.
 
-For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design) documentation.
+For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design/) documentation.
 
 @component('_partials.responsive-code-sample', ['class' => 'text-center'])
 @slot('none')

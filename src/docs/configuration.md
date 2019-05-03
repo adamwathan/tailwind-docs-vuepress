@@ -123,11 +123,11 @@ module.exports = {
 }
 ```
 
-Learn more about the default theme and how to customize it in the [theme configuration guide](/docs/theme).
+Learn more about the default theme and how to customize it in the [theme configuration guide](/docs/theme/).
 
 ## Variants
 
-The `variants` section lets you control which [variants](/docs/state-variants) are generated for each core utility plugin.
+The `variants` section lets you control which [variants](/docs/state-variants/) are generated for each core utility plugin.
 
 ```js
 // tailwind.config.js
@@ -140,7 +140,7 @@ module.exports = {
 }
 ```
 
-Learn more in the [variants configuration guide](/docs/configuring-variants).
+Learn more in the [variants configuration guide](/docs/configuring-variants/).
 
 ## Plugins
 
@@ -157,7 +157,7 @@ module.exports = {
 }
 ```
 
-Learn more about writing your own plugins in the [plugin authoring guide](/docs/plugins).
+Learn more about writing your own plugins in the [plugin authoring guide](/docs/plugins/).
 
 ## Prefix
 

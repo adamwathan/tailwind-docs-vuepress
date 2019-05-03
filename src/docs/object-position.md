@@ -122,7 +122,7 @@ Use the `.object-{side}` utilities to specify how a replaced element's content s
 
 To position an object only at a specific breakpoint, add a `{screen}:` prefix to any existing object position utility. For example, adding the class `md:object-top` to an element would apply the `object-top` utility at medium screen sizes and above.
 
-For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design) documentation.
+For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design/) documentation.
 
 @component('_partials.responsive-code-sample')
 @slot('none')

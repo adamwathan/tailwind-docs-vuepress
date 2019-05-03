@@ -66,7 +66,7 @@ Control the text alignment of an element using the `.text-left`, `.text-center`,
 
 To control the text alignment of an element at a specific breakpoint, add a `{screen}:` prefix to any existing text alignment utility. For example, use `md:text-center` to apply the `text-center` utility at only medium screen sizes and above.
 
-For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design) documentation.
+For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design/) documentation.
 
 @component('_partials.responsive-code-sample')
 @slot('none')

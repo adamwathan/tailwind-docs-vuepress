@@ -49,7 +49,7 @@ Use the `.italic` utility to make text italic.
 
 To control the font style of an element at a specific breakpoint, add a `{screen}:` prefix to any existing font style utility. For example, use `md:italic` to apply the `italic` utility at only medium screen sizes and above.
 
-For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design) documentation.
+For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design/) documentation.
 
 @component('_partials.responsive-code-sample')
 @slot('none')

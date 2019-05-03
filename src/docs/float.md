@@ -97,7 +97,7 @@ Use `.clearfix` to force an element to self-clear its children.
 
 To control the float of an element at a specific breakpoint, add a `{screen}:` prefix to any existing float utility class. For example, use `md:float-left` to apply the `float-left` utility at only medium screen sizes and above.
 
-For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design) documentation.
+For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design/) documentation.
 
 @component('_partials.responsive-code-sample')
 @slot('none')

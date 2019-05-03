@@ -184,7 +184,7 @@ Use the `.border-{side}`, `.border-{side}-0`, `.border-{side}-2`, `.border-{side
 
 To control the border width of an element at a specific breakpoint, add a `{screen}:` prefix to any existing border width utility. For example, use `md:border-t-4` to apply the `border-t-4` utility at only medium screen sizes and above.
 
-For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design) documentation.
+For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design/) documentation.
 
 @component('_partials.responsive-code-sample', ['class' => 'text-center'])
 @slot('none')

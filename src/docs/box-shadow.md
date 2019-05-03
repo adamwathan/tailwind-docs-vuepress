@@ -96,7 +96,7 @@ Use `.shadow-none` to remove an existing box shadow from an element. This is mos
 
 To control the shadow of an element at a specific breakpoint, add a `{screen}:` prefix to any existing shadow utility. For example, use `md:shadow-lg` to apply the `shadow-lg` utility at only medium screen sizes and above.
 
-For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design) documentation.
+For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design/) documentation.
 
 
 @component('_partials.responsive-code-sample', ['class' => 'bg-gray-200 flex justify-around items-center text-sm py-8'])

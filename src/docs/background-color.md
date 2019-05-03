@@ -44,7 +44,7 @@ Control the background color of an element using the `.bg-{color}` utilities.
 
 To control the background color of an element at a specific breakpoint, add a `{screen}:` prefix to any existing background color utility. For example, use `md:bg-green-500` to apply the `bg-green-500` utility at only medium screen sizes and above.
 
-For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design) documentation.
+For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design/) documentation.
 
 @component('_partials.responsive-code-sample', ['class' => 'text-center'])
 @slot('none')
@@ -123,9 +123,9 @@ Focus utilities can also be combined with responsive utilities by adding the res
 
 ### Background Colors
 
-By default Tailwind makes the entire [default color palette](/docs/colors#default-color-palette) available as background colors.
+By default Tailwind makes the entire [default color palette](/docs/colors/#default-color-palette) available as background colors.
 
-You can [customize your color palette](/docs/colors#customizing) by editing the `theme.colors` variable in your `tailwind.config.js` file, or customize just your background colors using the `theme.backgroundColor` section of your Tailwind config.
+You can [customize your color palette](/docs/colors/#customizing) by editing the `theme.colors` variable in your `tailwind.config.js` file, or customize just your background colors using the `theme.backgroundColor` section of your Tailwind config.
 
 @component('_partials.customized-config', ['key' => 'theme.backgroundColor', 'usesTheme' => true])
 - ...theme('colors'),

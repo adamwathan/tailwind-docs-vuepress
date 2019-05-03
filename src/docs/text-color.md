@@ -45,7 +45,7 @@ Control the text color of an element using the `.text-{color}` utilities.
 
 To control the text color of an element at a specific breakpoint, add a `{screen}:` prefix to any existing text color utility. For example, use `md:text-green-600` to apply the `text-green-600` utility at only medium screen sizes and above.
 
-For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design) documentation.
+For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design/) documentation.
 
 @component('_partials.responsive-code-sample', ['class' => 'text-center'])
 @slot('none')
@@ -126,9 +126,9 @@ Focus utilities can also be combined with responsive utilities by adding the res
 
 ### Text Colors
 
-By default Tailwind makes the entire [default color palette](/docs/colors#default-color-palette) available as text colors.
+By default Tailwind makes the entire [default color palette](/docs/colors/#default-color-palette) available as text colors.
 
-You can [customize your color palette](/docs/colors#customizing) by editing `theme.colors` in your `tailwind.config.js` file, or customize just your text colors in the `theme.textColor` section.
+You can [customize your color palette](/docs/colors/#customizing) by editing `theme.colors` in your `tailwind.config.js` file, or customize just your text colors in the `theme.textColor` section.
 
 @component('_partials.customized-config', ['key' => 'theme'])
 - textColor: theme => theme('colors'),

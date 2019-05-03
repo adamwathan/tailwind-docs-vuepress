@@ -10,23 +10,24 @@ While we strongly believe you can get a lot further with just utilities than you
 
 For example, using a utility-first approach, implementing a button style early in a project might look something like this:
 
-@component('_partials.code-sample', ['lang' => 'html', 'class' => 'text-center'])
-<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-  Button
-</button>
-
-@slot('code')
-<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-  Button
-</button>
-@endslot
-@endcomponent
+<code-sample example-class="text-center">
+  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+    Button
+  </button>
+  <template #code>
+    :::escape
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+      Button
+    </button>
+    :::
+  </template>
+</code-sample>
 
 If this is the only button in your project, creating a custom component class for it would be premature abstraction; you'd be writing new CSS for no measurable benefit.
 
 If on the other hand you were reusing this button style in several places, keeping that long list of utility classes in sync across every button instance could become a real maintenance burden.
 
-## Extracting utility patterns with @@apply
+## Extracting utility patterns with @apply
 
 When you start to notice repeating patterns of utilities in your markup, it might be worth extracting a component class.
 
@@ -34,26 +35,26 @@ To make this as easy as possible, Tailwind provides the `@apply` directive for a
 
 Here's what a `.btn-blue` class might look like using `@apply` to compose it from existing utilities:
 
-@component('_partials.code-sample', ['lang' => 'html', 'class' => 'text-center'])
-<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-  Button
-</button>
-
-@slot('code')
-<button class="btn-blue">
-  Button
-</button>
-
-<style>
-.btn-blue {
-  @@apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
-}
-.btn-blue:hover {
-  @@apply bg-blue-700;
-}
-</style>
-@endslot
-@endcomponent
+<code-sample example-class="text-center">
+  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+    Button
+  </button>
+  <template #code>
+    :::escape
+    <button class="btn-blue">
+      Button
+    </button>\n
+    <style>
+    .btn-blue {
+      @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
+    }
+    .btn-blue:hover {
+      @apply bg-blue-700;
+    }
+    </style>
+    :::
+  </template>
+</code-sample>
 
 Note that `hover:`, `focus:`, and `{screen}:` utility variants can't be mixed in directly. Instead, apply the plain version of the utility you need to the appropriate pseudo-selector or in a new media query.
 
@@ -61,41 +62,40 @@ Note that `hover:`, `focus:`, and `{screen}:` utility variants can't be mixed in
 
 Say you have these two buttons:
 
-@component('_partials.code-sample', ['lang' => 'html', 'class' => 'text-center'])
-<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-4">
-  Button
-</button>
-
-<button class="bg-gray-400 hover:bg-gray-500 text-gray-800 font-bold py-2 px-4 rounded">
-  Button
-</button>
-
-@slot('code')
-<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-  Button
-</button>
-
-<button class="bg-gray-400 hover:bg-gray-500 text-gray-800 font-bold py-2 px-4 rounded">
-  Button
-</button>
-@endslot
-@endcomponent
+<code-sample example-class="text-center">
+  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-4">
+    Button
+  </button>
+  <button class="bg-gray-400 hover:bg-gray-500 text-gray-800 font-bold py-2 px-4 rounded">
+    Button
+  </button>
+  <template #code>
+    :::escape
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+      Button
+    </button>\n
+    <button class="bg-gray-400 hover:bg-gray-500 text-gray-800 font-bold py-2 px-4 rounded">
+      Button
+    </button>
+    :::
+  </template>
+</code-sample>
 
 It might be tempting to implement component classes for these buttons like this:
 
 ```css
 .btn-blue {
-  @@apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
+  @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
 }
 .btn-blue:hover {
-  @@apply bg-blue-700;
+  @apply bg-blue-700;
 }
 
 .btn-gray {
-  @@apply bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded;
+  @apply bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded;
 }
 .btn-gray:hover {
-  @@apply bg-gray-500;
+  @apply bg-gray-500;
 }
 ```
 
@@ -107,61 +107,61 @@ A better approach is to extract the parts that are the same into a separate clas
 
 ```css
 .btn {
-  @@apply font-bold py-2 px-4 rounded;
+  @apply font-bold py-2 px-4 rounded;
 }
 
 .btn-blue {
-  @@apply bg-blue-500 text-white;
+  @apply bg-blue-500 text-white;
 }
 .btn-blue:hover {
-  @@apply bg-blue-700;
+  @apply bg-blue-700;
 }
 
 .btn-gray {
-  @@apply bg-gray-400 text-gray-800;
+  @apply bg-gray-400 text-gray-800;
 }
 .btn-gray:hover {
-  @@apply bg-gray-500;
+  @apply bg-gray-500;
 }
 ```
 
 Now you'd apply two classes any time you needed to style a button:
 
-@component('_partials.code-sample', ['lang' => 'html', 'class' => 'text-center'])
-<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-4">
-  Button
-</button>
-
-<button class="bg-gray-400 hover:bg-gray-500 text-gray-800 font-bold py-2 px-4 rounded">
-  Button
-</button>
-
-@slot('code')
-<button class="btn btn-blue">
-  Button
-</button>
-
-<button class="btn btn-gray">
-  Button
-</button>
-@endslot
-@endcomponent
+<code-sample example-class="text-center">
+  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-4">
+    Button
+  </button>
+  <button class="bg-gray-400 hover:bg-gray-500 text-gray-800 font-bold py-2 px-4 rounded">
+    Button
+  </button>
+  <template #code>
+    :::escape
+    <button class="btn btn-blue">
+      Button
+    </button>\n
+    <button class="btn btn-gray">
+      Button
+    </button>
+    :::
+  </template>
+</code-sample>
 
 This makes it easy to change the shared styles in one place by just editing the `.btn` class.
 
 It also allows you to add new one-off button styles without being forced to create a new component class or duplicated the shared styles:
 
-@component('_partials.code-sample', ['lang' => 'html', 'class' => 'text-center'])
-<button class="bg-green-500 hover:bg-green-400 text-white font-bold py-2 px-4 rounded">
-  Button
-</button>
-
-@slot('code')
-<button class="btn bg-green-500 hover:bg-green-400 text-white">
-  Button
-</button>
-@endslot
-@endcomponent
+<code-sample example-class="text-center">
+  <button class="bg-green-500 hover:bg-green-400 text-white font-bold py-2 px-4 rounded">
+    Button
+  </button>
+  <template #code>
+    :::escape
+    <button class="btn bg-green-500 hover:bg-green-400 text-white">
+      Button
+    </button>
+    :::
+  </template>
+</code-sample>
 
 ## CSS structure
 
@@ -170,33 +170,33 @@ Since Tailwind's utility classes don't rely on `!important` to defeat other styl
 Here's an example:
 
 ```css
-@@tailwind base;
+@tailwind base;
 
-@@tailwind components;
+@tailwind components;
 
 .btn {
-  @@apply font-bold py-2 px-4 rounded;
+  @apply font-bold py-2 px-4 rounded;
 }
 .btn-blue {
-  @@apply bg-blue-500 text-white;
+  @apply bg-blue-500 text-white;
 }
 .btn-blue:hover {
-  @@apply bg-blue-700;
+  @apply bg-blue-700;
 }
 
-@@tailwind utilities;
+@tailwind utilities;
 ```
 
 If you're using a preprocessor like Less or Sass, consider keeping your components in separate files and importing them:
 
 ```css
-@@tailwind base;
+@tailwind base;
 
-@@tailwind components;
+@tailwind components;
 
-@@import "components/buttons";
-@@import "components/forms";
+@import "components/buttons";
+@import "components/forms";
 /* Etc. */
 
-@@tailwind utilities;
+@tailwind utilities;
 ```

@@ -71,7 +71,7 @@ Use `.bg-scroll` to scroll the background image with the viewport, but not with 
 
 To control the background attachment of an element at a specific breakpoint, add a `{screen}:` prefix to any existing background attachment utility. For example, use `md:bg-fixed` to apply the `bg-fixed` utility at only medium screen sizes and above.
 
-For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design) documentation.
+For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design/) documentation.
 
 @component('_partials.responsive-code-sample')
 @slot('none')

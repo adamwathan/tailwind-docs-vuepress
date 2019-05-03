@@ -439,7 +439,7 @@ prefix('.btn-blue .w-1\/4 > h1.text-xl + a .bar')
 
 The `config` function allows you to ask for a value from the user's Tailwind configuration using dot notation, providing a default value if that path doesn't exist.
 
-For example, this simplified version of the built-in [container](/docs/container) plugin uses the config function to get the user's configured breakpoints:
+For example, this simplified version of the built-in [container](/docs/container/) plugin uses the config function to get the user's configured breakpoints:
 
 ```js
 // tailwind.config.js
@@ -661,7 +661,7 @@ addComponents([
 
 ## Adding variants
 
-The `addVariant` function allows you to register your own custom [variants](/docs/state-variants) that can be used just like the built-in hover, focus, active, etc. variants.
+The `addVariant` function allows you to register your own custom [variants](/docs/state-variants/) that can be used just like the built-in hover, focus, active, etc. variants.
 
 To add a new variant, call the `addVariant` function, passing in the name of your custom variant, and a callback that modifies the affected CSS rules as needed.
 
@@ -683,7 +683,7 @@ module.exports = {
 The callback receives an object that can be destructured into the following parts:
 
 - `modifySelectors`, a helper function to simplify adding basic variants
-- `separator`, the user's configured [separator string](/docs/configuration#separator)
+- `separator`, the user's configured [separator string](/docs/configuration/#separator)
 - `container`, a [PostCSS Container](http://api.postcss.org/Container.html) containing all of the rules the variant is being applied to, for creating complex variants
 
 ### Basic variants
@@ -779,7 +779,7 @@ modules.exports = {
 }
 ```
 
-To use custom variants with custom utilities in your own CSS, use the [variants at-rule](/docs/functions-and-directives#variants):
+To use custom variants with custom utilities in your own CSS, use the [variants at-rule](/docs/functions-and-directives/#variants):
 
 ```css
 @variants hover, first-child {

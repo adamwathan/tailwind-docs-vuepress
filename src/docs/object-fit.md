@@ -122,7 +122,7 @@ Display an element's content at its original size but scale it down to fit its c
 
 To control how a replaced element's content should be resized only at a specific breakpoint, add a `{screen}:` prefix to any existing object fit utility. For example, adding the class `md:object-scale-down` to an element would apply the `object-scale-down` utility at medium screen sizes and above.
 
-For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design) documentation.
+For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design/) documentation.
 
 @component('_partials.responsive-code-sample')
 @slot('none')

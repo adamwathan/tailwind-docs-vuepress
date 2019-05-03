@@ -43,7 +43,7 @@ We provide a sensible [default theme](https://github.com/tailwindcss/tailwindcss
 
 ## Theme structure
 
-The `theme` object contains keys for `screens`, `colors`, and `spacing`, as well as a key for each customizable [core plugin](/docs/core-plugins).
+The `theme` object contains keys for `screens`, `colors`, and `spacing`, as well as a key for each customizable [core plugin](/docs/core-plugins/).
 
 See the [theme configuration reference](#configuration-reference) or the [default theme](https://github.com/tailwindcss/tailwindcss/blob/next/stubs/defaultConfig.stub.js#L5) for a complete list of theme options.
 
@@ -65,7 +65,7 @@ module.exports = {
 }
 ```
 
-To learn more, see the [breakpoint customization documentation](/docs/breakpoints).
+To learn more, see the [breakpoint customization documentation](/docs/breakpoints/).
 
 ### Colors
 
@@ -93,7 +93,7 @@ module.exports = {
 
 By default, these colors are inherited by the `backgroundColor`, `textColor`, and `borderColor` core plugins.
 
-To learn more, see the [color customization documentation](/docs/colors).
+To learn more, see the [color customization documentation](/docs/colors/).
 
 ### Spacing
 
@@ -130,7 +130,7 @@ module.exports = {
 
 By default, these values are inherited by the `padding`, `margin`, `negativeMargin`, `width`, and `height` core plugins.
 
-To learn more, see the [spacing customization documentation](/docs/spacing).
+To learn more, see the [spacing customization documentation](/docs/spacing/).
 
 ### Core plugins
 
@@ -365,11 +365,11 @@ module.exports = {
 }
 ```
 
-Since the entire `theme` object is available in your CSS using the [theme function](/docs/functions-and-directives#theme), you might also add a key just to be able to reference it in your CSS.
+Since the entire `theme` object is available in your CSS using the [theme function](/docs/functions-and-directives/#theme), you might also add a key just to be able to reference it in your CSS.
 
 ## Configuration reference
 
-Except for `screens`, `colors`, and `spacing`, all of the keys in the `theme` object map to one of Tailwind's [core plugins](/docs/core-plugins). Since many plugins are responsible for CSS properties that only accept a static set of values (like `float` for example), note that not every plugin has a corresponding key in the `theme` object.
+Except for `screens`, `colors`, and `spacing`, all of the keys in the `theme` object map to one of Tailwind's [core plugins](/docs/core-plugins/). Since many plugins are responsible for CSS properties that only accept a static set of values (like `float` for example), note that not every plugin has a corresponding key in the `theme` object.
 
 All of these keys are also available under the `theme.extend` key to enable [extending the default theme](#extending-the-default-theme).
 

@@ -67,7 +67,7 @@ Use the `.no-underline` utility to remove underline or line-through styling.
 
 To control the text decoration of an element at a specific breakpoint, add a `{screen}:` prefix to any existing text decoration utility. For example, use `md:underline` to apply the `underline` utility at only medium screen sizes and above.
 
-For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design) documentation.
+For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design/) documentation.
 
 @component('_partials.responsive-code-sample')
 @slot('none')

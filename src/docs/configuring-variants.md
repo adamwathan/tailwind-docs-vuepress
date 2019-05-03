@@ -15,7 +15,7 @@ To Document:
 
 ---
 
-The `variants` section is where you control which [state variants](/docs/state-variants) are generated for each core utility plugin.
+The `variants` section is where you control which [state variants](/docs/state-variants/) are generated for each core utility plugin.
 
 ```js
 // tailwind.config.js
@@ -33,4 +33,4 @@ Each property is a core plugin name pointing to an array of state variants to ge
 
 It's important to note that (`responsive` excluded) **variants are generated in the order you specify them**, so variants at the end of the list will take precedence over variants at the beginning of the list.
 
-Learn more about state variants in the ["State Variants" documentation](/docs/state-variants).
+Learn more about state variants in the ["State Variants" documentation](/docs/state-variants/).

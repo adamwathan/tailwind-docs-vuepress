@@ -97,7 +97,7 @@ reprehenderit saepe quam aliquid odio accusamus.</div>
 
 To control the whitespace property of an element only at a specific breakpoint, add a `{screen}:` prefix to any existing whitespace utility. For example, adding the class `md:whitespace-pre` to an element would apply the `whitespace-pre` utility at medium screen sizes and above.
 
-For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design) documentation.
+For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design/) documentation.
 
 @component('_partials.responsive-code-sample')
 @slot('none')

@@ -13,7 +13,7 @@ To Document:
 
 ---
 
-Similar to our [responsive prefixes](/docs/responsive-design), Tailwind makes it easy to style elements on hover, focus, and more using *state* prefixes.
+Similar to our [responsive prefixes](/docs/responsive-design/), Tailwind makes it easy to style elements on hover, focus, and more using *state* prefixes.
 
 ## Hover
 
@@ -220,4 +220,4 @@ You can generate state variants for your own custom utilities using the `@varian
 
 ```
 
-For more information, see the [@variants directive documentation](/docs/functions-and-directives#variants).
+For more information, see the [@variants directive documentation](/docs/functions-and-directives/#variants).

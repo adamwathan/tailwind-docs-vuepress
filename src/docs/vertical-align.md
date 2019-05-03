@@ -149,7 +149,7 @@ Use `.align-text-bottom` to align the bottom of an element with the bottom of th
 
 To control the vertical alignment only at a specific breakpoint, add a `{screen}:` prefix to any existing vertical align utility. For example, adding the class `md:align-top` to an element would apply the `align-top` utility at medium screen sizes and above.
 
-For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design) documentation.
+For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design/) documentation.
 
 @component('_partials.responsive-code-sample')
 @slot('none')

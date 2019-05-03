@@ -133,7 +133,7 @@ For example, if you have customized Tailwind to create classes like `w-50%`, you
 
 ## Removing unused theme values
 
-If you can't use Purgecss for one reason or another, you can also reduce Tailwind's footprint by removing unused values from [your configuration file](/docs/configuration).
+If you can't use Purgecss for one reason or another, you can also reduce Tailwind's footprint by removing unused values from [your configuration file](/docs/configuration/).
 
 The default theme provides a very generous set of colors, breakpoints, sizes, margins, etc. to make sure that when you pull Tailwind down to prototype something, create a CodePen demo, or just try out the workflow, the experience is as enjoyable and fluid as possible.
 
@@ -145,7 +145,7 @@ Here are a few strategies you can use to keep your generated CSS small and perfo
 
 ### Limiting your color palette
 
-The default theme includes a whopping [93 colors](/docs/colors) used for backgrounds, borders, and text, all of which also have `hover:` and `focus` variants, as well as responsive variants at the five default screen sizes.
+The default theme includes a whopping [93 colors](/docs/colors/) used for backgrounds, borders, and text, all of which also have `hover:` and `focus` variants, as well as responsive variants at the five default screen sizes.
 
 This means that by default, there are 4185 classes generated from this color palette out of 8271 classes total in the entire default build.
 
