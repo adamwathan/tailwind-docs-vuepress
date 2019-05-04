@@ -21,33 +21,32 @@ This is done using predefined screen sizes (media query breakpoints), each of wh
 ## Responsive example
 
 <responsive-code-sample>
-  <div></div>
-  <template #none>
+  <template v-slot:none>
     <div class="flex justify-center">
       <div class="bg-purple-500 text-white w-24 h-24 rounded-full text-xs font-semibold flex items-center justify-center">Tailwind</div>
     </div>
   </template>
-  <template #sm>
+  <template v-slot:sm>
     <div class="flex justify-center">
       <div class="bg-green-500 text-white w-24 h-24 rounded-full text-xs font-semibold flex items-center justify-center">Tailwind</div>
     </div>
   </template>
-  <template #md>
+  <template v-slot:md>
     <div class="flex justify-center">
       <div class="bg-blue-500 text-yellow-500 w-24 h-24 rounded-full text-xs font-semibold flex items-center justify-center">Tailwind</div>
     </div>
   </template>
-  <template #lg>
+  <template v-slot:lg>
     <div class="flex justify-center">
       <div class="bg-red-500 text-yellow-500 w-24 h-24 rounded-full text-xs font-semibold flex items-center justify-center">Tailwind</div>
     </div>
   </template>
-  <template #xl>
+  <template v-slot:xl>
     <div class="flex justify-center">
       <div class="bg-orange-500 text-yellow-500 w-24 h-24 rounded-full text-xs font-semibold flex items-center justify-center">Tailwind</div>
     </div>
   </template>
-  <template #code>
+  <template v-slot:code>
     <div class="none:bg-purple-500 none:text-white sm:bg-green-500 md:bg-blue-500 md:text-yellow-500 lg:bg-red-500 xl:bg-orange-500 ...">
       ...
     </div>

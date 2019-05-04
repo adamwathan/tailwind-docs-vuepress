@@ -263,33 +263,32 @@ To change how an element is positioned only at a specific breakpoint, add a `{sc
 For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design/) documentation.
 
 <responsive-code-sample>
-  <div></div>
-  <template #none>
+  <template v-slot:none>
     <div class="relative h-32 bg-gray-400 p-4">
       <div class="relative inset-x-0 bottom-0 bg-gray-800 p-4 text-gray-500">Responsive element</div>
     </div>
   </template>
-  <template #sm>
+  <template v-slot:sm>
     <div class="relative h-32 bg-gray-400 p-4">
       <div class="absolute inset-x-0 bottom-0 bg-gray-800 p-4 text-gray-500">Responsive element</div>
     </div>
   </template>
-  <template #md>
+  <template v-slot:md>
     <div class="relative h-32 bg-gray-400 p-4">
       <div class="fixed inset-x-0 bottom-0 z-100 bg-gray-800 p-4 text-gray-500">Responsive element</div>
     </div>
   </template>
-  <template #lg>
+  <template v-slot:lg>
     <div class="relative h-32 bg-gray-400 p-4">
       <div class="absolute inset-x-0 bottom-0 bg-gray-800 p-4 text-gray-500">Responsive element</div>
     </div>
   </template>
-  <template #xl>
+  <template v-slot:xl>
     <div class="relative h-32 bg-gray-400 p-4">
       <div class="relative inset-x-0 bottom-0 bg-gray-800 p-4 text-gray-500">Responsive element</div>
     </div>
   </template>
-  <template #code>
+  <template v-slot:code>
     :::escape    
     <div class="relative h-32 bg-gray-400 p-4">
       <div class="inset-x-0 bottom-0 none:relative sm:absolute md:fixed lg:absolute xl:relative"></div>

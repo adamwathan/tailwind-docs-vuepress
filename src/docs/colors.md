@@ -47,65 +47,16 @@ To get you started, Tailwind includes a generous palette of great looking colors
     </div>
   </div>
 
-@include('_partials.color-palette', [
-  'colorName' => 'Gray',
-  'color' => 'gray',
-  'breakpoint' => '500',
-])
-
-@include('_partials.color-palette', [
-  'colorName' => 'Red',
-  'color' => 'red',
-  'breakpoint' => '500',
-])
-
-@include('_partials.color-palette', [
-  'colorName' => 'Orange',
-  'color' => 'orange',
-  'breakpoint' => '500',
-])
-
-@include('_partials.color-palette', [
-  'colorName' => 'Yellow',
-  'color' => 'yellow',
-  'breakpoint' => '500',
-])
-
-@include('_partials.color-palette', [
-  'colorName' => 'Green',
-  'color' => 'green',
-  'breakpoint' => '400',
-])
-
-@include('_partials.color-palette', [
-  'colorName' => 'Teal',
-  'color' => 'teal',
-  'breakpoint' => '400',
-])
-
-@include('_partials.color-palette', [
-  'colorName' => 'Blue',
-  'color' => 'blue',
-  'breakpoint' => '400',
-])
-
-@include('_partials.color-palette', [
-  'colorName' => 'Indigo',
-  'color' => 'indigo',
-  'breakpoint' => '400',
-])
-
-@include('_partials.color-palette', [
-  'colorName' => 'Purple',
-  'color' => 'purple',
-  'breakpoint' => '400',
-])
-
-@include('_partials.color-palette', [
-  'colorName' => 'Pink',
-  'color' => 'pink',
-  'breakpoint' => '400',
-])
+  <ColorPalette display-name="Gray" color-name="gray" />
+  <ColorPalette display-name="Red" color-name="red" />
+  <ColorPalette display-name="Orange" color-name="orange" />
+  <ColorPalette display-name="Yellow" color-name="yellow" />
+  <ColorPalette display-name="Green" color-name="green" />
+  <ColorPalette display-name="Teal" color-name="teal" />
+  <ColorPalette display-name="Blue" color-name="blue" />
+  <ColorPalette display-name="Indigo" color-name="indigo" />
+  <ColorPalette display-name="Purple" color-name="purple" />
+  <ColorPalette display-name="Pink" color-name="pink" />
 </div>
 
 ## Customizing
