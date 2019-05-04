@@ -106,6 +106,8 @@ If I link to `/docs/state-variants#focus` from another page, it doesn't seem to 
 
 I spent about an hour on this and then just gave up and decided I had to use a different tool.
 
+**Update**: Writing this got me wondering what the hell was going on here again so I tinkered a bit. Couldn't fix it but confirmed that at least in this project, anchor links like that just don't even work at all, for example `http://localhost:8080/docs/plugins/#adding-variants` never scrolls to the "Adding Variants" heading if you type that URL into the browser directly or visit it from a link. Frustrating!
+
 ## 6. One of my inline SVG background images is broken but only when building the static export
 
 The inlined URL encoded SVG background image on this div gets broken by the production build process:
