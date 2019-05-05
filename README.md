@@ -108,7 +108,23 @@ I spent about an hour on this and then just gave up and decided I had to use a d
 
 **Update**: Writing this got me wondering what the hell was going on here again so I tinkered a bit. Couldn't fix it but confirmed that at least in this project, anchor links like that just don't even work at all, for example `http://localhost:8080/docs/plugins/#adding-variants` never scrolls to the "Adding Variants" heading if you type that URL into the browser directly or visit it from a link. Frustrating!
 
-## 6. One of my inline SVG background images is broken but only when building the static export
+Here's a link to a production deploy where you can see this not working:
+
+https://upbeat-mcclintock-c78b91.netlify.com/docs/functions-and-directives/
+
+Search for the "configured a prefix" link and click it, you'll see you're not taken to the right place.
+
+## 6. CSS doesn't load properly in production
+
+For some reason, in production mode parts of my CSS aren't being applied. You can see this by visiting this link and noticing that the actual content section of the page is missing a lot of styling:
+
+https://upbeat-mcclintock-c78b91.netlify.com/docs/functions-and-directives/
+
+Super weird because as soon as you click one of the "on this page" links on the right, the styling pops in.
+
+Even more weird is that all the styling for the whole site comes from a single CSS file, and most of the styles are working on first load (the sidebar, etc.)
+
+## 7. One of my inline SVG background images is broken but only when building the static export
 
 The inlined URL encoded SVG background image on this div gets broken by the production build process:
 
